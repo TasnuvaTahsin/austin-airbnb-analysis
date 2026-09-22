@@ -1,0 +1,53 @@
+CREATE TABLE listings_clean AS
+SELECT
+    NULLIF(id, '')::BIGINT AS listing_id,
+    name,
+    NULLIF(host_id, '')::BIGINT AS host_id,
+    host_name,
+    NULLIF(host_since, '')::DATE AS host_since,
+    NULLIF(host_is_superhost, '')::BOOLEAN AS host_is_superhost,
+    host_response_time,
+    NULLIF(regexp_replace(host_response_rate, '%', '', 'g'), '')::NUMERIC AS host_response_rate,
+    NULLIF(regexp_replace(host_acceptance_rate, '%', '', 'g'), '')::NUMERIC AS host_acceptance_rate,
+    neighbourhood_cleansed AS neighbourhood,
+    NULLIF(latitude, '')::NUMERIC AS latitude,
+    NULLIF(longitude, '')::NUMERIC AS longitude,
+    property_type,
+    room_type,
+    NULLIF(accommodates, '')::INTEGER AS accommodates,
+    NULLIF(bathrooms, '')::NUMERIC AS bathrooms,
+    NULLIF(bedrooms, '')::INTEGER AS bedrooms,
+    NULLIF(beds, '')::INTEGER AS beds,
+    amenities,
+    NULLIF(regexp_replace(price, '[\$,]', '', 'g'), '')::NUMERIC AS price,
+    NULLIF(minimum_nights, '')::INTEGER AS minimum_nights,
+    NULLIF(maximum_nights, '')::INTEGER AS maximum_nights,
+    NULLIF(has_availability, '')::BOOLEAN AS has_availability,
+    NULLIF(availability_30, '')::INTEGER AS availability_30,
+    NULLIF(availability_60, '')::INTEGER AS availability_60,
+    NULLIF(availability_90, '')::INTEGER AS availability_90,
+    NULLIF(availability_365, '')::INTEGER AS availability_365,
+    NULLIF(number_of_reviews, '')::INTEGER AS number_of_reviews,
+    NULLIF(number_of_reviews_ltm, '')::INTEGER AS number_of_reviews_ltm,
+    NULLIF(first_review, '')::DATE AS first_review,
+    NULLIF(last_review, '')::DATE AS last_review,
+    NULLIF(review_scores_rating, '')::NUMERIC AS review_scores_rating,
+    NULLIF(review_scores_cleanliness, '')::NUMERIC AS review_scores_cleanliness,
+    NULLIF(review_scores_checkin, '')::NUMERIC AS review_scores_checkin,
+    NULLIF(review_scores_communication, '')::NUMERIC AS review_scores_communication,
+    NULLIF(review_scores_location, '')::NUMERIC AS review_scores_location,
+    NULLIF(review_scores_value, '')::NUMERIC AS review_scores_value,
+    NULLIF(instant_bookable, '')::BOOLEAN AS instant_bookable,
+    NULLIF(calculated_host_listings_count, '')::INTEGER AS calculated_host_listings_count,
+    NULLIF(reviews_per_month, '')::NUMERIC AS reviews_per_month
+FROM staging_listings;
+
+-- Build a clean, properly-typed calendar table from staging data
+CREATE TABLE calendar_clean AS
+SELECT
+    NULLIF(listing_id, '')::BIGINT AS listing_id,
+    NULLIF(date, '')::DATE AS date,
+    NULLIF(available, '')::BOOLEAN AS available,
+    NULLIF(minimum_nights, '')::INTEGER AS minimum_nights,
+    NULLIF(maximum_nights, '')::INTEGER AS maximum_nights
+FROM staging_calendar;
