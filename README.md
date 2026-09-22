@@ -23,18 +23,18 @@ detailed listings and calendar data (accessed 2026).
 ## Key Findings
 - Typical listing: $217/night (median), though the average ($352) is 
   pulled up by a smaller number of high-priced listings, particularly 
-  in ZIP 78732 (~$1,900+/night average).
-- ZIP 78742 combines a low average price (~$150) with the highest 
-  occupancy rate (~58%) - a likely underpriced, high-opportunity area.
-- ZIP 78704 generates the highest estimated total revenue (~$78M), 
+  in ZIP 78732 (approx. $1,900+/night average).
+- ZIP 78742 combines a low average price (approx. $150) with the highest 
+  occupancy rate (approx. 58%) - a likely underpriced, high-opportunity area.
+- ZIP 78704 generates the highest estimated total revenue (approx. $78M), 
   driven by listing volume rather than premium individual pricing.
 - Room type strongly affects price: Hotel room listings average the 
-  highest (~$650), followed by Entire home/apt (~$380), Private room 
-  (~$230), and Shared room lowest (~$50).
-- Price scales fairly linearly with bedroom count, from ~$220 for 
-  1-bedroom listings up to ~$870 for 5-bedroom listings.
+  highest (approx. $650), followed by Entire home/apt (approx. $380), 
+  Private room (approx. $230), and Shared room lowest (approx. $50).
+- Price scales fairly linearly with bedroom count, from approx. $220 for 
+  1-bedroom listings up to approx. $870 for 5-bedroom listings.
 - Counter to expectation, non-superhost listings average slightly 
-  higher prices (~$355) than superhost listings (~$310).
+  higher prices (approx. $355) than superhost listings (approx. $310).
 - Note: the sharp occupancy spike near the end of the calendar window 
   (Jun-Jul 2027) likely reflects hosts not yet opening bookings that 
   far out, rather than genuine demand.
